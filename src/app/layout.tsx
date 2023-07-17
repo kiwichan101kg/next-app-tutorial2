@@ -10,7 +10,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
         <Header />
         {children}
       </body>

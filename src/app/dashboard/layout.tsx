@@ -1,14 +1,12 @@
-export default function DashboardLayout({
-  children, // will be a page or nested layout
+export default function TestLayout({
+  children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <section>
-      {/* Include shared UI here e.g. a header or sidebar */}
-      <nav>ナビゲーション</nav>
-
-      {children}
-    </section>
+    <div className="h-screen flex">
+      <div className="bg-gray-100 p-2 w-48">dashboardサイドバー</div>
+      <div className="p-2">{children}</div>
+    </div>
   );
 }
