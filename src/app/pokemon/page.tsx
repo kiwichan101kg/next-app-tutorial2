@@ -8,7 +8,7 @@ const Pages = async () => {
   return (
     <main className="p-2">
       <h1 className="text-lg font-bold">Pokemonページ</h1>
-      <Suspense>
+      <Suspense fallback={<p className="mt-4">ポケモンデータ Loading...</p>}>
         <PokemonList />
       </Suspense>
     </main>

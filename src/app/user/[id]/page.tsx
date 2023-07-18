@@ -17,6 +17,7 @@ const getUser = async (id: string) => {
     `https://jsonplaceholder.typicode.com/users/${id}`
   );
   const user: User = await response.json();
+  console.log("取得中", user);
 
   return user;
 };

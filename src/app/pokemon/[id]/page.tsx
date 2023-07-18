@@ -7,16 +7,22 @@ type Props = { params: { id: string } };
 
 const getPokemon = async (id: string) => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
+  console.log("取得中");
+
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  const pokemon = await response.json();
-  console.log(pokemon);
+  console.log("response", response.ok);
+
+  if (!response.ok) throw new Error("Something went wrong");
+  if (!response.ok) return undefined;
+  const pokemon: any = await response.json();
+  console.log("取得中", pokemon);
 
   return pokemon;
 };
 
 const Pokemon = async ({ params: { id } }: Props) => {
   const pokemon = await getPokemon(id);
-  if (!pokemon.id) {
+  if (!pokemon) {
     notFound();
   }
   return (
