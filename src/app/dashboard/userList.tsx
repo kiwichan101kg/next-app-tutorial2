@@ -8,7 +8,10 @@ type User = {
 // dashboardページに最初にアクセスするとfetch処理が走る(ターミナルにusers情報が出る)
 // fetch結果をキャッシュするため、他ページに移動して再度dashboardページに戻るとfetch処理が行われない
 const getUsers = async () => {
+  // 非同期遅延処理
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
+  if (!response.ok) throw new Error("Something went wrong");
   const users: User[] = await response.json();
   console.log(users);
 

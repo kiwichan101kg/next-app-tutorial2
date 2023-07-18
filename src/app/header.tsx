@@ -20,6 +20,9 @@ const header = () => {
           <li>
             <Link href="/dashboard">dashboard</Link>
           </li>
+          <li>
+            <Link href="/pokemon">pokemon</Link>
+          </li>
         </ul>
       </nav>
     </header>
