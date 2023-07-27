@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-const header = () => {
+const Header = () => {
   return (
-    <header>
-      <nav className="p-2 h-12">
-        <ul className="flex items-center space-x-2">
-          <li>
-            <img src="/vercel.svg" className="w-32" />
-          </li>
+    <header className="bg-red-300  p-7 mt-auto ">
+      <nav className="p-2 h-12 flex justify-between ">
+        <h1>
+          <img src="/vercel.svg" className="w-32" />
+        </h1>
+        <ul className="flex items-center space-x-5  text-white text-xl">
           <li>
             <Link href="/">Home</Link>
           </li>
@@ -29,4 +29,4 @@ const header = () => {
   );
 };
 
-export default header;
+export default Header;

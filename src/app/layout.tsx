@@ -1,3 +1,4 @@
+import { Footer } from "./footer";
 import "./globals.css";
 import Header from "./header";
 
@@ -9,9 +10,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="flex flex-col">
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
